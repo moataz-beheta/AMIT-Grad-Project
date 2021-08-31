@@ -51,10 +51,12 @@ int main(void)
 	
     while (1) 
     {
+		/*	Wait Command from Master	*/
 		Command = 0;	
 		LCD_Clear();
 	    LCD_WriteSTring("Waiting...");
 		
+		/*	Receive Command from Master via SPI	*/
 		Command = SPI_Receive ();
 		LCD_Clear();
 		LCD_WriteSTring("Received");
@@ -62,14 +64,17 @@ int main(void)
 		
 		switch(Command)
 		{
+			/*	Toggle Led 1 	*/
 			case 'a' :
 			Toggle_Led1();
 			break;
 			
+			/*	Toggle Led 2 	*/
 			case 'b' :
 			Toggle_Led2();
 			break;
 			
+			/*	Any other received command 	*/
 			default:
 			LCD_Clear();
 			LCD_WriteSTring("Wrong Command - ");

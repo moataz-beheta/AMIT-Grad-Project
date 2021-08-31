@@ -79,14 +79,17 @@ int main(void)
 		/*	Interpret which action should be executed 	*/
 		switch(Command)
 		{
+			/*	Toggle Led 1 	*/
 			case 'a' :
 			Toggle_Led1();
 			break;
 			
+			/*	Toggle Led 2 	*/
 			case 'b' :
 			Toggle_Led2();
 			break;
 			
+			/*	Any other received command 	*/
 			default:
 			LCD_Clear();
 			LCD_WriteSTring("Wrong Command - ");
